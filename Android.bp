@@ -1,0 +1,141 @@
+// Copyright (C) 2020 The Android Open Source Project
+//
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//      http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+
+package {
+    default_applicable_licenses: ["external_SmartRefreshLayout_license"],
+}
+
+// Added automatically by a large-scale-change
+// See: http://go/android-license-faq
+license {
+    name: "external_SmartRefreshLayout_license",
+    visibility: [":__subpackages__"],
+    license_kinds: [
+        "SPDX-license-identifier-BSD",
+    ],
+    license_text: [
+        "LICENSE",
+    ],
+}
+
+// libRefreshKernel 核心
+android_library {
+    name: "libRefreshKernel",
+    manifest: "refresh-layout-kernel/src/main/AndroidManifest.xml",
+    resource_dirs: ["refresh-layout-kernel/src/main/res"],
+    srcs: [
+        "refresh-layout-kernel/src/main/java/**/*.java",
+    ],
+    static_libs: [
+        "com.google.android.material_material",
+    ],
+}
+
+// libRefreshHeaderClassics 经典刷新头
+// android_library {
+//     name: "libRefreshHeaderClassics",
+//     manifest: "refresh-header-classics/src/main/AndroidManifest.xml",
+//     resource_dirs: ["refresh-header-classics/src/main/res"],
+//     srcs: [
+//         "refresh-header-classics/src/main/java/**/*.java",
+//     ],
+//     static_libs: [
+//         "androidx.appcompat_appcompat",
+//         "libRefreshKernel",
+//     ],
+// }
+
+// libRefreshHeaderRadar 雷达刷新头
+android_library {
+    name: "libRefreshHeaderRadar",
+    manifest: "refresh-header-radar/src/main/AndroidManifest.xml",
+    resource_dirs: ["refresh-header-radar/src/main/res"],
+    srcs: [
+        "refresh-header-radar/src/main/java/**/*.java",
+    ],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "libRefreshKernel",
+    ],
+}
+
+// libRefreshHeaderFalsify 虚拟刷新头
+android_library {
+    name: "libRefreshHeaderFalsify",
+    manifest: "refresh-header-falsify/src/main/AndroidManifest.xml",
+    resource_dirs: ["refresh-header-falsify/src/main/res"],
+    srcs: [
+        "refresh-header-falsify/src/main/java/**/*.java",
+    ],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "libRefreshKernel",
+    ],
+}
+
+// libRefreshHeaderMaterial 谷歌刷新头
+android_library {
+    name: "libRefreshHeaderMaterial",
+    manifest: "refresh-header-material/src/main/AndroidManifest.xml",
+    resource_dirs: ["refresh-header-material/src/main/res"],
+    srcs: [
+        "refresh-header-material/src/main/java/**/*.java",
+    ],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "libRefreshKernel",
+    ],
+}
+
+// libRefreshHeaderTwoLevel 二级刷新头
+// android_library {
+//     name: "libRefreshHeaderTwoLevel",
+//     manifest: "refresh-header-two-level/src/main/AndroidManifest.xml",
+//     resource_dirs: ["refresh-header-two-level/src/main/res"],
+//     srcs: [
+//         "refresh-header-two-level/src/main/java/**/*.java",
+//     ],
+//     static_libs: [
+//         "androidx.appcompat_appcompat",
+//         "libRefreshKernel",
+//     ],
+// }
+
+// libRefreshHeaderFooterBall 球脉冲加载
+android_library {
+    name: "libRefreshHeaderFooterBall",
+    manifest: "refresh-footer-ball/src/main/AndroidManifest.xml",
+    resource_dirs: ["refresh-footer-ball/src/main/res"],
+    srcs: [
+        "refresh-footer-ball/src/main/java/**/*.java",
+    ],
+    static_libs: [
+        "androidx.appcompat_appcompat",
+        "libRefreshKernel",
+    ],
+}
+
+// libRefreshHeaderFooterClassics 经典加载
+// android_library {
+//     name: "libRefreshHeaderFooterClassics",
+//     manifest: "refresh-footer-classics/src/main/AndroidManifest.xml",
+//     resource_dirs: ["refresh-footer-classics/src/main/res"],
+//     srcs: [
+//         "refresh-footer-classics/src/main/java/**/*.java",
+//     ],
+//     static_libs: [
+//         "androidx.appcompat_appcompat",
+//         "libRefreshKernel",
+//     ],
+// }
